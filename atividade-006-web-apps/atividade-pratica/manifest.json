@@ -1,0 +1,19 @@
+{
+    "name": "GelatoArt Repositor — Estoque e Pedidos",
+    "short_name": "Repositor",
+    "description": "Sistema de Estoque e Pedidos da Sorveteria GelatoArt para vendedores e entregadores de campo.",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#fff8f0",
+    "theme_color": "#e65c00",
+    "lang": "pt-BR",
+    "icons": [
+        {
+            "src": "icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e65c00">
+    <meta name="description" content="GelatoArt Repositor — Sistema de Estoque e Pedidos da Sorveteria para vendedores e entregadores de campo.">
+    <title>GelatoArt Repositor — Estoque e Pedidos</title>
+
+    <!-- Otimização: resolução antecipada de DNS do servidor de CDN -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <!-- Otimização: download prioritário da folha de estilo principal -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Manifesto do PWA (instalação na tela inicial) -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <header role="banner">
+        <h1>🍦 GelatoArt Repositor</h1>
+        <p class="subtitulo">Sistema de Estoque e Pedidos da Sorveteria</p>
+        <p id="status-conexao" aria-live="polite">Conexão: Verificando...</p>
+    </header>
+
+    <main role="main" class="container">
+
+        <!-- Alertas de reposição -->
+        <section class="card-sorvete" aria-labelledby="titulo-alertas">
+            <h2 id="titulo-alertas">🔔 Alertas</h2>
+            <p>Receba um aviso no dispositivo sempre que um pedido de reposição for registrado.</p>
+            <button id="btn-notificacao" type="button" class="btn-sorvete min-44">
+                🔔 Ativar Alertas de Reposição
+            </button>
+        </section>
+
+        <!-- Formulário de reposição -->
+        <section class="card-sorvete" aria-labelledby="titulo-form">
+            <h2 id="titulo-form">📦 Pedido de Reposição</h2>
+
+            <form id="form-reposicao" novalidate>
+                <div class="campo">
+                    <label for="ponto-venda">Ponto de venda</label>
+                    <input id="ponto-venda" name="pontoVenda" type="text" class="min-44"
+                           placeholder="Ex.: Mercado Central — Pompéia/SP" required>
+                </div>
+
+                <div class="campo">
+                    <label for="responsavel">Vendedor / Entregador</label>
+                    <input id="responsavel" name="responsavel" type="text" class="min-44"
+                           placeholder="Seu nome" required>
+                </div>
+
+                <div class="linha">
+                    <div class="campo">
+                        <label for="sabor">Sabor</label>
+                        <select id="sabor" name="sabor" class="min-44" required>
+                            <option value="">Selecione...</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="quantidade">Quantidade (potes)</label>
+                        <input id="quantidade" name="quantidade" type="number" class="min-44"
+                               min="1" max="500" step="1" value="1" required>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade" name="prioridade" class="min-44">
+                        <option value="Normal">Normal</option>
+                        <option value="Urgente">Urgente</option>
+                    </select>
+                </div>
+
+                <p id="mensagem-form" class="mensagem" role="status" aria-live="polite"></p>
+
+                <button type="submit" class="btn-sorvete min-44">✅ Registrar Reposição</button>
+            </form>
+        </section>
+
+        <!-- Estoque -->
+        <section class="card-sorvete" aria-labelledby="titulo-estoque">
+            <h2 id="titulo-estoque">🧊 Estoque da Fábrica</h2>
+            <div id="grade-estoque" class="grade-sabores"></div>
+        </section>
+
+        <!-- Pedidos registrados -->
+        <section class="card-sorvete" aria-labelledby="titulo-pedidos">
+            <h2 id="titulo-pedidos">📋 Pedidos Registrados</h2>
+            <ul id="lista-pedidos" class="lista-pedidos"></ul>
+            <button id="btn-limpar" type="button" class="btn-secundario min-44">
+                🗑️ Limpar Pedidos
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <p>GelatoArt © 2026 — Atividade 006 Web Apps</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

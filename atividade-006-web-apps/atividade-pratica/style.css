@@ -1,0 +1,225 @@
+/* ===== Paleta temática da sorveteria (laranja e tons quentes) ===== */
+:root {
+    --laranja: #e65c00;
+    --laranja-claro: #ff8000;
+    --creme: #fff8f0;
+    --pessego: #fff0e5;
+    --texto: #4a3e3d;
+    --sucesso: #2e7d32;
+    --erro: #c62828;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--creme);
+    margin: 0;
+    padding: 0;
+    color: var(--texto);
+}
+
+header {
+    background-color: var(--laranja);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0 0 4px;
+}
+
+.subtitulo {
+    margin: 0 0 8px;
+    opacity: 0.9;
+}
+
+#status-conexao {
+    margin: 0;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 20px;
+}
+
+.card-sorvete {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-sorvete h2 {
+    margin-top: 0;
+}
+
+/* ===== Formulário ===== */
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.linha {
+    display: flex;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select {
+    font-size: 1rem;
+    padding: 8px 12px;
+    border: 2px solid #f3d3bd;
+    border-radius: 8px;
+    background: white;
+    color: var(--texto);
+    width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+    outline: 3px solid var(--laranja-claro);
+    outline-offset: 2px;
+}
+
+.mensagem {
+    min-height: 1.2em;
+    margin: 0 0 12px;
+    font-weight: bold;
+}
+
+.mensagem.sucesso { color: var(--sucesso); }
+.mensagem.erro { color: var(--erro); }
+
+/* ===== Estoque ===== */
+.grade-sabores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.item-sabor {
+    background: var(--pessego);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--laranja-claro);
+}
+
+.item-sabor h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+
+.item-sabor p {
+    margin: 0;
+}
+
+.item-sabor.baixo {
+    border-left-color: var(--erro);
+}
+
+.item-sabor.baixo p {
+    color: var(--erro);
+    font-weight: bold;
+}
+
+/* ===== Pedidos ===== */
+.lista-pedidos {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+    display: grid;
+    gap: 10px;
+}
+
+.lista-pedidos li {
+    background: var(--pessego);
+    border-radius: 8px;
+    padding: 12px 15px;
+    border-left: 5px solid var(--laranja-claro);
+}
+
+.lista-pedidos li.urgente {
+    border-left-color: var(--erro);
+}
+
+.lista-pedidos .vazio {
+    background: none;
+    border: none;
+    padding: 0;
+    font-style: italic;
+}
+
+.lista-pedidos small {
+    display: block;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+/* ===== Botões ===== */
+.btn-sorvete {
+    background-color: var(--laranja);
+    color: white;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-sorvete:hover {
+    background-color: #cc5200;
+}
+
+.btn-secundario {
+    background: white;
+    color: var(--laranja);
+    border: 2px solid var(--laranja);
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Usabilidade Móvel (garantia de 44px de altura mínima para toque) */
+.min-44 {
+    min-height: 44px;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 560px) {
+    .grade-sabores {
+        grid-template-columns: 1fr;
+    }
+
+    .linha {
+        flex-direction: column;
+        gap: 0;
+    }
+}

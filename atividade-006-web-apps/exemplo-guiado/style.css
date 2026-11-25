@@ -1,0 +1,58 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff8f0;
+    margin: 0;
+    padding: 0;
+    color: #4a3e3d;
+}
+
+header {
+    background-color: #e65c00;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card-sorvete {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.grade-sabores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.item-sabor {
+    background: #fff0e5;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #ff8000;
+}
+
+.btn-sorvete {
+    background-color: #e65c00;
+    color: white;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Usabilidade Móvel (Garantia de 44px de altura mínima) */
+.min-44 {
+    min-height: 44px;
+}
