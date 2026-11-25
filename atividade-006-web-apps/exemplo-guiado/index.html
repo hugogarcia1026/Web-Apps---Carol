@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GelatoArt - Fábrica de Sorvetes PWA</title>
+
+    <!-- 5.5.3. DNS-Prefetch para CDN de ícones -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- 5.5.1. Preload para a folha de estilo do tema -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 5.5.2. Prefetch para a página de sabores promocionais -->
+    <link rel="prefetch" href="promocoes.html">
+</head>
+<body>
+
+    <header role="banner">
+        <h1>🍦 GelatoArt — Fábrica de Sorvetes</h1>
+        <p id="status-conexao">Conexão: Verificando...</p>
+    </header>
+
+    <main role="main" class="container">
+        <section class="card-sorvete">
+            <h2>Catálogo de Gelatos Artesanais</h2>
+            <p>Nossos produtos são produzidos diariamente com ingredientes 100% naturais de Pompéia/SP.</p>
+
+            <div class="grade-sabores">
+                <article class="item-sabor">
+                    <h3>🍦 Gelato de Baunilha Madagascar</h3>
+                    <p>Cremoso, feito com favas naturais de baunilha.</p>
+                </article>
+                <article class="item-sabor">
+                    <h3>🍫 Sorvete de Chocolate Amargo 70%</h3>
+                    <p>Intenso e produzido com cacau seleto.</p>
+                </article>
+            </div>
+
+            <button id="btn-notificacao" class="btn-sorvete min-44">
+                🔔 Receber Alertas de Novos Lotes
+            </button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
